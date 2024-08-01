@@ -4,6 +4,8 @@ import './App.css';
 function App() {
   const [data, setData] = useState('');
 
+  //update env variable
+
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API_URL}/data`)
       .then(response => response.json())
@@ -13,7 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Data from Server:</h1>
+      <h1>Data from Server</h1>
       <p>{data}</p>
     </div>
   );

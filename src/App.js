@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Welcome Indraprastha Sewa Samiti Ramleela 2024</h1>
+      <h1>Welcome to Indraprastha Sewa Samiti Ramleela 2024</h1>
       <p>{data}</p>
     </div>
   );

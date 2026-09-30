@@ -6,6 +6,7 @@ const pageImages: Record<string, string[]> = {
   "/schedule": [festival.poster],
   "/about": [site.chairperson.photo],
   "/quality-policy": [site.chairperson.photo],
+  "/achievements": ["/images/achievements/vidyanjali-2025.jpg"],
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {

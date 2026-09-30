@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Card, PageHero, Section } from "@/components/PageHero";
 import { CtaBand } from "@/components/CtaBand";
 import { Credentials } from "@/components/Credential";
@@ -69,6 +70,13 @@ export default function AboutPage() {
             work goes beyond organizing events. We actively engage in social welfare activities, such as distributing
             blankets to the poor and raising awareness on health-related issues. We strive to address the needs of the
             underprivileged and create an inclusive and compassionate society.
+          </p>
+          <p>
+            In November 2025 we were recognised by the Ministry of Education for volunteering in its Vidyanjali school
+            programme, contributing stationery to Govt. Sarvodaya Kanya Vidyalaya No. 1, Sagarpur.{" "}
+            <Link href="/achievements" className="font-semibold text-saffron hover:text-maroon">
+              See our achievements →
+            </Link>
           </p>
           <p>
             We welcome you to explore our website and learn more about our initiatives, events, and the incredible work we

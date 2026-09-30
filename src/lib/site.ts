@@ -135,6 +135,8 @@ export const navigation: (NavLink | NavGroup)[] = [
     label: "Media",
     items: [
       { href: "/photos", label: "Photos" },
+      { href: "/achievements", label: "Achievements" },
+      { href: "/media-coverage", label: "Media Coverage" },
       { href: "/social-media", label: "Social Media" },
     ],
   },

@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "festivals": "Festivals",
+    "contact": "Contact",
+    "googleListing": "Fiche Google",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "menu": "Menu"
+  },
+  "hero": {
+    "welcome": "Bienvenue à",
+    "body": "Un temple hindou sacré et centre du patrimoine à Norval, Halton Hills — un lieu de culte, de festivals et de Sanatan Dharma pour les familles de la RGT.",
+    "aboutCta": "À propos",
+    "visitCta": "Visiter",
+    "imageAlt": "Indraprastha Sewa Samiti à Norval, Ontario"
+  },
+  "about": {
+    "eyebrow": "À propos",
+    "title": "Temple hindou à Norval, Ontario",
+    "p1": "L’Indraprastha Sewa Samiti est un temple hindou et foyer culturel à Norval, Halton Hills. Dédié à Shri Radha Sarveshwar, nous accueillons les dévots de la grande région de Toronto pour le culte, les festivals et la communauté.",
+    "p2": "Notre mission est de préserver et partager le Sanatan Dharma — un lieu où les familles se réunissent, où les enfants grandissent dans la culture, et où les visiteurs trouvent la paix.",
+    "imageAlt": "Intérieur du temple Indraprastha Sewa Samiti"
+  },
+  "festivals": {
+    "eyebrow": "Événements du temple",
+    "title": "Festivals à l’ISS",
+    "body": "Rejoignez-nous toute l’année pour le calendrier hindou sacré à Norval. Appelez ou écrivez pour la prochaine date d’utsav.",
+    "items": {
+      "janmashtami": {
+        "title": "Janmashtami",
+        "note": "Apparition de Krishna",
+        "alt": "Décorations de Janmashtami à l’Indraprastha Sewa Samiti"
+      },
+      "diwali": {
+        "title": "Diwali",
+        "note": "Fête des lumières",
+        "alt": "Lampes Diwali au temple"
+      },
+      "holi": {
+        "title": "Holi",
+        "note": "Fête des couleurs",
+        "alt": "Couleurs de Holi au centre du patrimoine"
+      },
+      "radhashtami": {
+        "title": "Radhashtami",
+        "note": "Apparition de Shri Radha",
+        "alt": "Offrande de lotus et diya pour Radhashtami"
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Nous joindre",
+    "title": "Contact",
+    "body": "Pour toute question ou visite, contactez-nous par téléphone ou courriel. Ouvert tous les jours {{hours}}.",
+    "phone": "Téléphone",
+    "location": "Emplacement du temple",
+    "email": "Courriel",
+    "viewOnGoogle": "Voir sur Google",
+    "openGoogleListing": "Ouvrir la fiche Google",
+    "getDirections": "Itinéraire",
+    "call": "Appeler {{phone}}",
+    "mapTitle": "Carte vers Indraprastha Sewa Samiti"
+  },
+  "footer": {
+    "blurb": "Un centre spirituel et culturel dédié aux valeurs hindoues, à la tradition et à la communauté à Norval, Canada.",
+    "navigation": "Navigation",
+    "getInTouch": "Nous joindre",
+    "daily": "Tous les jours {{hours}}",
+    "rights": "Tous droits réservés."
+  },
+  "common": {
+    "openDaily": "Ouvert tous les jours",
+    "hoursLabel": "Ouvert tous les jours"
+  }
+}

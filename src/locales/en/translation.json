@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "festivals": "Festivals",
+    "contact": "Contact",
+    "googleListing": "Google listing",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menu": "Menu"
+  },
+  "hero": {
+    "welcome": "Welcome to",
+    "body": "A sacred Hindu temple and heritage centre in Norval, Halton Hills — a place to worship, celebrate festivals, and keep Sanatan Dharma alive for families across the GTA.",
+    "aboutCta": "About us",
+    "visitCta": "Visit",
+    "imageAlt": "Indraprastha Sewa Samiti temple grounds in Norval, Ontario"
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "Hindu temple in Norval, Ontario",
+    "p1": "Indraprastha Sewa Samiti is a Hindu temple and cultural home in Norval, Halton Hills. Dedicated to Shri Radha Sarveshwar, we welcome devotees from across the Greater Toronto Area for worship, festivals, and community.",
+    "p2": "Our purpose is to preserve and share Sanatan Dharma — a place where families can gather, children can grow in culture, and visitors can find peace.",
+    "imageAlt": "Indraprastha Sewa Samiti temple hall interior"
+  },
+  "festivals": {
+    "eyebrow": "Temple events",
+    "title": "Festivals at ISS",
+    "body": "Join us through the year for the sacred Hindu calendar in Norval. Call or email for the next utsav date.",
+    "items": {
+      "janmashtami": {
+        "title": "Janmashtami",
+        "note": "Krishna’s appearance",
+        "alt": "Janmashtami celebration decorations at Indraprastha Sewa Samiti"
+      },
+      "diwali": {
+        "title": "Diwali",
+        "note": "Festival of lights",
+        "alt": "Diwali oil lamps and lights at the temple"
+      },
+      "holi": {
+        "title": "Holi",
+        "note": "Festival of colours",
+        "alt": "Holi festival colours at the heritage centre"
+      },
+      "radhashtami": {
+        "title": "Radhashtami",
+        "note": "Shri Radha’s appearance",
+        "alt": "Lotus and diya offering for Radhashtami"
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Get in touch",
+    "title": "Contact",
+    "body": "Whether you have questions or wish to visit, reach us by phone or email. We are open daily {{hours}}.",
+    "phone": "Phone",
+    "location": "Temple location",
+    "email": "Email",
+    "viewOnGoogle": "View on Google",
+    "openGoogleListing": "Open Google listing",
+    "getDirections": "Get directions",
+    "call": "Call {{phone}}",
+    "mapTitle": "Map to Indraprastha Sewa Samiti"
+  },
+  "footer": {
+    "blurb": "A spiritual and cultural centre dedicated to Hindu values, tradition, and community in Norval, Canada.",
+    "navigation": "Navigation",
+    "getInTouch": "Get in touch",
+    "daily": "Daily {{hours}}",
+    "rights": "All rights reserved."
+  },
+  "common": {
+    "openDaily": "Open daily",
+    "hoursLabel": "Open daily"
+  }
+}

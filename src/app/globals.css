@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-maroon: #6b1c2a;
+  --color-maroon-deep: #4a121c;
+  --color-gold: #c9a227;
+  --color-gold-light: #e2c86a;
+  --color-cream: #f6ebd4;
+  --color-ivory: #fbf6ec;
+  --color-ink: #2a1618;
+  --font-sans: var(--font-source);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-gold) 50%, transparent);
+  color: var(--color-maroon-deep);
+}
+
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold) 18%,
+    var(--color-gold-light) 50%,
+    var(--color-gold) 82%,
+    transparent
+  );
+}

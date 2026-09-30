@@ -8,21 +8,12 @@ export default function manifest(): MetadataRoute.Manifest {
     description: site.description,
     start_url: "/",
     display: "standalone",
-    background_color: "#fbf6ec",
-    theme_color: "#4a121c",
-    lang: "en-CA",
+    background_color: "#fffaf1",
+    theme_color: "#4f110e",
+    lang: "en-IN",
     icons: [
-      {
-        src: "/favicon.png",
-        sizes: "64x64",
-        type: "image/png",
-      },
-      {
-        src: "/images/logo.png",
-        sizes: "1024x1024",
-        type: "image/png",
-        purpose: "any",
-      },
+      { src: "/favicon.png", sizes: "48x48", type: "image/png" },
+      { src: "/images/iss-logo.png", sizes: "215x215", type: "image/png", purpose: "any" },
     ],
   };
 }

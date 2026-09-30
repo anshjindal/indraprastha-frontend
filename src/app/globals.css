@@ -1,14 +1,17 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-maroon: #6b1c2a;
-  --color-maroon-deep: #4a121c;
-  --color-gold: #c9a227;
-  --color-gold-light: #e2c86a;
-  --color-cream: #f6ebd4;
-  --color-ivory: #fbf6ec;
-  --color-ink: #2a1618;
-  --font-sans: var(--font-source);
+  --color-maroon: #7a1f1a;
+  --color-maroon-deep: #4f110e;
+  --color-saffron: #e8731a;
+  --color-saffron-light: #f7a936;
+  --color-gold: #c9962a;
+  --color-gold-light: #efcf73;
+  --color-cream: #fbefd9;
+  --color-ivory: #fffaf1;
+  --color-ink: #2c1410;
+  --font-sans: var(--font-source), var(--font-deva);
+  --font-hindi: var(--font-deva), var(--font-source);
 }
 
 html {
@@ -22,7 +25,7 @@ body {
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--color-gold) 50%, transparent);
+  background: color-mix(in oklab, var(--color-saffron-light) 55%, transparent);
   color: var(--color-maroon-deep);
 }
 
@@ -36,4 +39,57 @@ body {
     var(--color-gold) 82%,
     transparent
   );
+}
+
+.sunburst {
+  background:
+    radial-gradient(circle at 50% 115%, rgb(247 169 54 / 0.55), transparent 55%),
+    repeating-conic-gradient(from 0deg at 50% 115%, rgb(255 255 255 / 0.05) 0deg 6deg, transparent 6deg 12deg),
+    linear-gradient(160deg, var(--color-maroon-deep), var(--color-maroon) 55%, #a8361a);
+}
+
+.field {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid rgb(122 31 26 / 0.2);
+  background: white;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 150ms, box-shadow 150ms;
+}
+
+.field:focus {
+  border-color: var(--color-saffron);
+  box-shadow: 0 0 0 3px rgb(232 115 26 / 0.18);
+}
+
+.prose-iss > p {
+  margin-top: 1rem;
+  line-height: 1.8;
+}
+
+.prose-iss > h2 {
+  margin-top: 2.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-maroon);
+}
+
+.prose-iss > h3 {
+  margin-top: 1.5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-maroon);
+}
+
+.prose-iss > ul {
+  margin-top: 0.75rem;
+  list-style: disc;
+  padding-left: 1.4rem;
+}
+
+.prose-iss > ul > li {
+  margin-top: 0.4rem;
+  line-height: 1.7;
 }

@@ -13,7 +13,12 @@ export const site = {
   registration: "Registered society under the Societies Registration Act",
   registrationNo: "S/RS/DW(SW)/1800/2019",
   darpanId: "DL/2020/0257289",
-  taxRegistration: "12A & 80G Registered",
+  eightyG: {
+    urn: "AABAI7713EF20241",
+    approval: "Provisional approval dated 08-08-2024",
+    validity: "AY 2025-26 to AY 2027-28",
+  },
+  csrRegistrationNo: "CSR00096028",
   chairperson: {
     name: "Smt. Poonam Jindal",
     title: "Chairperson, Dusshera Mohatsav Sagarpur & Indraprastha Sewa Samiti",
@@ -143,6 +148,18 @@ export const navigation: (NavLink | NavGroup)[] = [
   },
   { href: "/contact", label: "Contact Us" },
 ];
+
+export const credentials = {
+  society: { label: "Society Registration No.", value: site.registrationNo },
+  darpan: { label: "NGO Darpan ID", value: site.darpanId },
+  csr: { label: "CSR Registration (MCA)", value: site.csrRegistrationNo },
+  twelveA: { label: "12A Registration", value: "Registered under Section 12A, Income Tax Act" },
+  eightyG: {
+    label: "80G Registration (URN)",
+    value: site.eightyG.urn,
+    note: `${site.eightyG.approval} · valid ${site.eightyG.validity}`,
+  },
+};
 
 export const isExternal = (href: string) => href.startsWith("http");
 

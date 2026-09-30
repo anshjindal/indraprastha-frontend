@@ -14,11 +14,11 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <Image
-              src="/images/iss-logo.png"
+              src="/images/iss-ngo-logo.png"
               alt={`${site.name} logo`}
               width={96}
               height={96}
-              className="h-24 w-24 rounded-2xl bg-cream p-2"
+              className="h-20 w-20 rounded-2xl"
             />
             <div>
               <p className="text-lg font-bold">{site.name}</p>

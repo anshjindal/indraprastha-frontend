@@ -19,19 +19,14 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 md:px-6">
         <Link href="/" className="flex shrink-0 items-center gap-3">
           <Image
-            src="/images/iss-logo.png"
-            alt={`${site.name} – Ramleela & Dusshera Mohotsav logo`}
+            src="/images/iss-ngo-logo.png"
+            alt={`${site.name} logo`}
             width={64}
             height={64}
             priority
-            className="h-14 w-14 md:h-16 md:w-16"
+            className="h-12 w-12 rounded-xl md:h-14 md:w-14"
           />
-          <span className="leading-tight">
-            <span className="block text-base font-bold text-maroon md:text-lg">{site.name}</span>
-            <span className="block text-xs text-maroon/70">
-              {site.registration.split(" under")[0]} · Since {site.founded}
-            </span>
-          </span>
+          <span className="text-base font-bold text-maroon md:text-lg">{site.name}</span>
         </Link>
 
         <nav className="hidden items-center gap-1 xl:flex" aria-label="Main">

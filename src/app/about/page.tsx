@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { Card, PageHero, Section } from "@/components/PageHero";
 import { CtaBand } from "@/components/CtaBand";
+import { Credentials } from "@/components/Credential";
 import { pageMetadata } from "@/lib/seo";
-import { festival, site } from "@/lib/site";
+import { credentials, festival, site } from "@/lib/site";
 
 export const metadata = pageMetadata({
   title: "About Us – Organisers of the Sagarpur Ramleela, Delhi",
@@ -30,23 +31,6 @@ export default function AboutPage() {
             initiatives.
           </p>
 
-          <div className="my-8 grid gap-4 sm:grid-cols-3">
-            {[
-              { label: "Registration No.", value: site.registrationNo },
-              { label: "NGO Darpan ID", value: site.darpanId },
-              { label: "Income Tax", value: site.taxRegistration },
-            ].map((item) => (
-              <div key={item.label} className="rounded-2xl border border-gold/30 bg-cream px-5 py-4">
-                <p className="text-xs font-bold tracking-[0.2em] text-saffron uppercase">{item.label}</p>
-                <p className="mt-1 font-bold break-all text-maroon">{item.value}</p>
-              </div>
-            ))}
-          </div>
-          <p>
-            We are registered under Sections 12A and 80G of the Income Tax Act, and listed on NITI Aayog&apos;s NGO
-            Darpan portal. Donations to {site.name} are eligible for tax deduction under Section 80G.
-          </p>
-
           <h2>Ramleela &amp; Dusshera Mohotsav Sagarpur</h2>
           <p>
             One of our flagship events is the annual cultural and religious program called ‘{festival.name}’. This grand
@@ -54,6 +38,10 @@ export default function AboutPage() {
             <strong>{festival.dateLabel}</strong> — capturing the essence of Indian culture and traditions. Situated in
             Sagarpur, New Delhi-110046, our event has become the biggest religious and cultural program in the locality,
             attracting people from all walks of life.
+          </p>
+          <p>
+            We have organised the Ramleela every year since {site.founded}. The only exceptions were 2020 and 2021, when
+            the event could not take place due to the COVID-19 pandemic.
           </p>
           <p>
             The chairperson of Dusshera Mohatsav Sagarpur and our esteemed organization is {site.chairperson.name}, an
@@ -102,6 +90,34 @@ export default function AboutPage() {
               <p className="text-sm text-ink/70">{site.chairperson.title}</p>
             </div>
           </div>
+
+          <h2 className="!mt-14">Registrations &amp; compliance</h2>
+          <Credentials
+            className="my-6"
+            items={[
+              credentials.society,
+              credentials.darpan,
+              credentials.twelveA,
+              credentials.eightyG,
+              credentials.csr,
+            ]}
+          />
+          <p>
+            We are registered under Sections 12A and 80G of the Income Tax Act, and listed on NITI Aayog&apos;s NGO
+            Darpan portal. Donations to {site.name} are eligible for tax deduction under Section 80G.
+          </p>
+          <ul>
+            <li>
+              An 80G certificate of donation (Form 10BE) is issued for every eligible donation, so please share your PAN
+              when you donate.
+            </li>
+            <li>Cash donations above ₹2,000 are not eligible for deduction under Section 80G.</li>
+          </ul>
+          <p>
+            We are also registered with the Ministry of Corporate Affairs to undertake CSR activities (CSR-1
+            registration no. {site.csrRegistrationNo}), and we receive CSR contributions from corporates and public
+            sector undertakings in support of our cultural programmes and welfare work.
+          </p>
         </article>
 
         <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">

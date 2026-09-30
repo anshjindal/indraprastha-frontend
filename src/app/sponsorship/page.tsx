@@ -1,14 +1,17 @@
 import { Card, PageHero, Section, SectionHeading } from "@/components/PageHero";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { ContactStrip } from "@/components/ContactStrip";
+import { Credentials } from "@/components/Credential";
 import { pageMetadata } from "@/lib/seo";
-import { festival, site } from "@/lib/site";
+import { credentials, festival, site } from "@/lib/site";
 
 export const metadata = pageMetadata({
   title: `Ramleela Sponsorship in Delhi ${festival.year} – Reach 5 Lakh+ Visitors`,
   description: `Sponsor the ${festival.seoName} ${festival.year} at ${festival.venue} — title, day and Ravan Dahan sponsorships reaching ${festival.totalFootfall} visitors over ${festival.days} days in South West Delhi (${site.name}).`,
   path: "/sponsorship",
+  keywords: ["CSR registered NGO Delhi", "CSR NGO Sagarpur", "Ramleela CSR sponsorship", "80G NGO Delhi"],
 });
+
 
 const reach = [
   { value: `~${festival.dailyFootfall}`, label: "visitors every day" },
@@ -62,6 +65,29 @@ export default function SponsorshipPage() {
         </div>
       </Section>
 
+      <Section tone="white" className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+        <div>
+          <SectionHeading
+            eyebrow="Corporate Social Responsibility"
+            title="Partner with us under CSR"
+            intro={`${site.name} is registered with the Ministry of Corporate Affairs to undertake CSR activities, so companies can fund our work from their CSR budget under Section 135 of the Companies Act, 2013.`}
+          />
+          <p className="mt-4 leading-relaxed text-ink/80">
+            We receive CSR contributions from corporates and public sector undertakings for the promotion of traditional
+            art and culture through the Ramleela, and for welfare work such as blanket distribution and health awareness.
+          </p>
+        </div>
+        <Credentials
+          items={[
+            credentials.csr,
+            credentials.darpan,
+            credentials.society,
+            credentials.twelveA,
+            credentials.eightyG,
+          ]}
+        />
+      </Section>
+
       <Section tone="cream" className="grid gap-10 lg:grid-cols-[1.5fr_1fr]">
         <EnquiryForm
           subject="Sponsorship Enquiry"
@@ -70,7 +96,7 @@ export default function SponsorshipPage() {
             { name: "name", label: "Contact person", required: true },
             { name: "phone", label: "Mobile number", type: "tel", required: true },
             { name: "email", label: "Email", type: "email" },
-            { name: "package", label: "Interested in", type: "select", options: [...packages.map((p) => p.title), "Not sure yet"], wide: true },
+            { name: "package", label: "Interested in", type: "select", options: [...packages.map((p) => p.title), "CSR Partnership", "Not sure yet"], wide: true },
             { name: "message", label: "Message", type: "textarea" },
           ]}
         />
@@ -80,6 +106,7 @@ export default function SponsorshipPage() {
               <li>Dense, family audience from Sagarpur, Palam, Dwarka and nearby areas</li>
               <li>Eminent dignitaries invited as Chief Guests</li>
               <li>Brand association with culture, faith and social good</li>
+              <li>CSR-registered ({site.csrRegistrationNo}) and 12A &amp; 80G registered</li>
             </ul>
           </Card>
           <ContactStrip heading="Talk to the organising committee" />

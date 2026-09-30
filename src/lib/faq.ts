@@ -21,7 +21,7 @@ export const homeFaq: FaqItem[] = [
   },
   {
     question: "Who organises the Ramleela at DDA Ground Sagarpur?",
-    answer: `${site.name} (${site.hindiName}), a registered NGO founded in ${site.founded}, has organised the Ramleela every year since. The festival is led by ${site.chairperson.name}, ${site.chairperson.note}.`,
+    answer: `${site.name} (${site.hindiName}), a registered NGO founded in ${site.founded}, has organised the Ramleela every year since then, except in 2020 and 2021 when it could not be held due to COVID-19. The festival is led by ${site.chairperson.name}, ${site.chairperson.note}.`,
   },
   {
     question: "How can I volunteer, perform, set up a stall or sponsor?",

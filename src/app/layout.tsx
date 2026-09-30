@@ -4,7 +4,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Noto_Sans_Devanagari, Source_Sans_3 } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { JsonLd } from "@/components/JsonLd";
 import { festival, site } from "@/lib/site";
+import { organizationLd, websiteLd } from "@/lib/structured-data";
 import "./globals.css";
 
 const sourceSans = Source_Sans_3({
@@ -19,7 +21,7 @@ const notoDevanagari = Noto_Sans_Devanagari({
   display: "swap",
 });
 
-const titleDefault = `${site.name} | ${festival.name} ${festival.year}`;
+const titleDefault = `${festival.seoName} ${festival.year} at Sagarpur | ${site.name}`;
 
 export const viewport: Viewport = {
   themeColor: "#4f110e",
@@ -40,9 +42,6 @@ export const metadata: Metadata = {
   publisher: site.name,
   category: "nonprofit",
   keywords: [...site.keywords],
-  alternates: {
-    canonical: "/",
-  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -59,17 +58,19 @@ export const metadata: Metadata = {
     siteName: site.name,
     locale: "en_IN",
     type: "website",
-    images: [{ url: "/images/iss-logo.png", width: 215, height: 215, alt: `${site.name} logo` }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: titleDefault,
     description: site.description,
-    images: ["/images/iss-logo.png"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
   },
   other: {
     "geo.region": "IN-DL",
@@ -85,6 +86,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${sourceSans.variable} ${notoDevanagari.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-ivory font-sans text-ink">
+        <JsonLd data={[organizationLd, websiteLd]} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { PageHero, Section } from "@/components/PageHero";
+import { pageMetadata } from "@/lib/seo";
 import { festival, site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Quality Policy",
-  description: `Quality policy of ${site.name}, organisers of the annual ${festival.name}.`,
-  alternates: { canonical: "/quality-policy" },
-};
+  description: `Quality Policy of ${site.name}, organisers of the ${festival.name}: beneficiary focus, continuous improvement, ISO 9001:2015 alignment and ethical conduct.`,
+  path: "/quality-policy",
+});
 
 const principles = [
   {
@@ -56,7 +56,7 @@ const principles = [
 export default function QualityPolicyPage() {
   return (
     <>
-      <PageHero eyebrow="Governance" title="Quality Policy" hindi={`Quality Policy: ${site.name}`} />
+      <PageHero path="/quality-policy" eyebrow="Governance" title="Quality Policy" hindi={`Quality Policy: ${site.name}`} />
 
       <Section>
         <p className="max-w-4xl text-lg leading-relaxed text-ink/85 md:text-xl">

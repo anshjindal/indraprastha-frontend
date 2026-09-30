@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
 import { Card, PageHero, Section, SectionHeading } from "@/components/PageHero";
 import { ContactStrip } from "@/components/ContactStrip";
 import { tenders } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 import { festival, site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Tenders",
-  description: `Open tenders and quotations invited by ${site.name} for the ${festival.name}.`,
-  alternates: { canonical: "/tenders" },
-};
+export const metadata = pageMetadata({
+  title: "Tenders – Sagarpur Ramleela & Dussehra Mohotsav",
+  description: `Open tenders and quotations invited by ${site.name} for the ${festival.seoName} and Dussehra Mohotsav at ${festival.venue}.`,
+  path: "/tenders",
+});
 
 const categories = [
   "Tent, pandal & stage construction",
@@ -25,6 +25,7 @@ export default function TendersPage() {
   return (
     <>
       <PageHero
+        path="/tenders"
         eyebrow="Procurement"
         title="Tenders"
         intro={`${site.name} invites quotations from qualified vendors for the ${festival.name} and other programmes. All tenders are published on this page.`}

@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
 import { Card, PageHero, Section, SectionHeading } from "@/components/PageHero";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { ContactStrip } from "@/components/ContactStrip";
+import { pageMetadata } from "@/lib/seo";
 import { festival, site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Join our Team",
-  description: `Volunteer with ${site.name} for the ${festival.name} ${festival.year} and our social welfare drives.`,
-  alternates: { canonical: "/join-our-team" },
-};
+export const metadata = pageMetadata({
+  title: `Volunteer at ${festival.seoName} ${festival.year} – Join our Team`,
+  description: `Volunteer at the Sagarpur Ramleela ${festival.year} in Delhi — stage, crowd management, stalls, social media and first aid — and in ${site.name}'s welfare drives.`,
+  path: "/join-our-team",
+});
 
 const roles = [
   { icon: "🎭", title: "Stage & Ramlila Support", body: "Backstage help, costumes, props, sound and lighting coordination." },
@@ -23,6 +23,7 @@ export default function JoinPage() {
   return (
     <>
       <PageHero
+        path="/join-our-team"
         eyebrow="Volunteer with us"
         title="Join our Team"
         hindi="सेवा ही संगठन है"

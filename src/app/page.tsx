@@ -2,10 +2,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { Card, Section, SectionHeading } from "@/components/PageHero";
 import { CtaBand } from "@/components/CtaBand";
+import { Faq } from "@/components/Faq";
+import { JsonLd } from "@/components/JsonLd";
 import { SmartLink } from "@/components/SmartLink";
 import { InstagramFeed, InstagramFollowButton } from "@/components/InstagramFeed";
+import { homeFaq } from "@/lib/faq";
 import { formatDay, schedule2026 } from "@/lib/schedule";
+import { pageMetadata } from "@/lib/seo";
 import { festival, site } from "@/lib/site";
+import { eventLd, faqLd } from "@/lib/structured-data";
+
+export const metadata = pageMetadata({
+  title: `${festival.seoName} ${festival.year} at Sagarpur | Ramlila & Dussehra Mela, 10–20 Oct`,
+  description: site.description,
+  path: "/",
+  absoluteTitle: true,
+});
 
 const stats = [
   { value: String(site.founded), label: "Serving since" },
@@ -16,7 +28,7 @@ const stats = [
 
 const highlights = [
   { icon: "🏹", title: "Ramlila Performance", body: "Eleven evenings of the Ramayana brought to life on a grand stage, from Ganesh Vandana to Rajtilak." },
-  { icon: "🔥", title: "Pootla Dehen", body: "The symbolic burning of Ravan's effigy on Dussehra — the victory of good over evil." },
+  { icon: "🔥", title: "Pootla Dehen (Ravan Dahan)", body: "The symbolic burning of Ravan's effigy on Dussehra — the victory of good over evil." },
   { icon: "🎡", title: "Joy Rides", body: "Thrilling rides and fun zones for children and families throughout the festival." },
   { icon: "🍲", title: "Shop & Food Court", body: "A lively mela with food stalls, shopping and local vendors from across the city." },
   { icon: "💃", title: "Dandiya Night", body: "A festive evening of garba and dandiya open to the whole community." },
@@ -32,54 +44,18 @@ const involve = [
 ];
 
 export default function Home() {
-  const jsonLd = [
-    {
-      "@context": "https://schema.org",
-      "@type": "NGO",
-      "@id": `${site.url}/#org`,
-      name: site.name,
-      alternateName: [site.hindiName, site.shortName],
-      url: site.url,
-      logo: `${site.url}/images/iss-logo.png`,
-      email: site.email,
-      telephone: site.phones.map((p) => p.href.replace("tel:", "")),
-      foundingDate: String(site.founded),
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: site.offices[0].lines[0],
-        addressLocality: "West Sagarpur, New Delhi",
-        postalCode: "110046",
-        addressCountry: "IN",
-      },
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Event",
-      name: `${festival.name} ${festival.year}`,
-      startDate: festival.startDate,
-      endDate: festival.endDate,
-      eventStatus: "https://schema.org/EventScheduled",
-      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-      image: [`${site.url}${festival.poster}`],
-      location: {
-        "@type": "Place",
-        name: festival.venue,
-        address: { "@type": "PostalAddress", addressLocality: "Sagarpur, New Delhi", postalCode: "110046", addressCountry: "IN" },
-      },
-      organizer: { "@id": `${site.url}/#org` },
-      isAccessibleForFree: true,
-    },
-  ];
-
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <JsonLd data={[eventLd, faqLd(homeFaq)]} />
 
       <section className="sunburst relative overflow-hidden text-cream">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:px-6 md:py-24 lg:grid-cols-[1.2fr_1fr]">
           <div>
             <p className="font-hindi text-lg text-gold-light">सस्नेह निमंत्रण · जय श्री राम</p>
             <h1 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">
+              <span className="mb-2 block text-base font-bold tracking-[0.3em] text-saffron-light uppercase md:text-lg">
+                {festival.seoName} · New Delhi
+              </span>
               {festival.name} <span className="text-saffron-light">{festival.year}</span>
             </h1>
             <p className="mt-3 font-hindi text-2xl text-gold-light">
@@ -91,8 +67,9 @@ export default function Home() {
               <span className="rounded-full bg-white/10 px-4 py-2 font-semibold ring-1 ring-white/20">📍 {festival.venue}, New Delhi</span>
             </div>
             <p className="mt-6 max-w-xl leading-relaxed text-cream/85">
-              The biggest religious and cultural celebration of South West Delhi — eleven days of Ramlila, Pootla Dehen,
-              joy rides, a food court and cultural competitions. You are warmly invited with your family.
+              One of the biggest Ramleelas in Delhi and the largest religious and cultural celebration of South West
+              Delhi — eleven days of Ramlila, Ravan Dahan on Dussehra, joy rides, a food court and cultural competitions.
+              You are warmly invited with your family.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/schedule" className="rounded-full bg-saffron-light px-6 py-3 text-sm font-bold text-maroon-deep hover:bg-gold-light">
@@ -162,7 +139,7 @@ export default function Home() {
         <SectionHeading
           eyebrow="The Festival"
           title="Eleven days of devotion, culture and joy"
-          intro={`Every evening at ${festival.venue} in the heart of South West Delhi.`}
+          intro={`Every evening at ${festival.venue} in the heart of South West Delhi — a short ride from ${site.nearbyAreas.slice(0, 5).join(", ")} and ${site.nearbyAreas[5]}.`}
         />
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {highlights.map((item) => (
@@ -243,6 +220,15 @@ export default function Home() {
         <Card title="Health Awareness" icon="🩺">
           We raise awareness on health-related issues and work to address the needs of the underprivileged.
         </Card>
+      </Section>
+
+      <Section className="grid gap-10 lg:grid-cols-[1fr_1.6fr]">
+        <SectionHeading
+          eyebrow="FAQ"
+          title={`${festival.seoName} ${festival.year} — your questions`}
+          intro="Everything you need to know before visiting the Ramleela at DDA Ground, Sagarpur."
+        />
+        <Faq items={homeFaq} />
       </Section>
 
       <div className="pt-16">

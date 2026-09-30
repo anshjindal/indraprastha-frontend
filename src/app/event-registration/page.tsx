@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
 import { Card, PageHero, Section } from "@/components/PageHero";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { ContactStrip } from "@/components/ContactStrip";
+import { pageMetadata } from "@/lib/seo";
 import { festival } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Event Registration",
-  description: `Register for Dandiya Night, drawing and dance competitions at the ${festival.name} ${festival.year}.`,
-  alternates: { canonical: "/event-registration" },
-};
+export const metadata = pageMetadata({
+  title: `Dandiya Night & Competition Registration – ${festival.seoName} ${festival.year}`,
+  description: `Register for Dandiya Night and the drawing and dance competitions at the ${festival.seoName} ${festival.year}, ${festival.dateLabel} at ${festival.venue}.`,
+  path: "/event-registration",
+});
 
 const events = [
   { icon: "💃", title: "Dandiya Night", body: "Open to all ages — come solo, with family or as a group. Traditional attire encouraged." },
@@ -21,6 +21,7 @@ export default function EventRegistrationPage() {
   return (
     <>
       <PageHero
+        path="/event-registration"
         eyebrow={`${festival.name} ${festival.year}`}
         title="Event Registration"
         intro={`Register for the cultural events and competitions held alongside the Ramlila at ${festival.venue}, ${festival.dateLabel}.`}

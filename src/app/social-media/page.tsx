@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
 import { PageHero, Section, SectionHeading } from "@/components/PageHero";
 import { InstagramFeed, InstagramFollowButton } from "@/components/InstagramFeed";
 import { FacebookIcon, InstagramIcon } from "@/components/SocialIcons";
+import { pageMetadata } from "@/lib/seo";
 import { festival, site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Social Media",
-  description: `Follow ${site.name} and the ${festival.name} on Instagram and Facebook for reels, live updates and highlights.`,
-  alternates: { canonical: "/social-media" },
-};
+export const metadata = pageMetadata({
+  title: "Ramleela Reels & Live Updates – Instagram & Facebook",
+  description: `Watch Ramlila reels and live updates from the ${festival.name} in Delhi. Follow @${site.instagramHandle} on Instagram and Facebook.`,
+  path: "/social-media",
+});
 
 const facebookPlugin = `https://www.facebook.com/plugins/page.php?${new URLSearchParams({
   href: site.social.facebook,
@@ -25,6 +25,7 @@ export default function SocialMediaPage() {
   return (
     <>
       <PageHero
+        path="/social-media"
         eyebrow="Stay connected"
         title="Social Media"
         intro={`Reels, live Ramlila moments and behind-the-scenes from ${festival.venue} — follow us and never miss an update.`}

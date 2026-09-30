@@ -1,16 +1,20 @@
 import Link from "next/link";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbLd } from "@/lib/structured-data";
 
 type Props = {
   eyebrow?: string;
   title: string;
+  path: string;
   hindi?: string;
   intro?: string;
   children?: React.ReactNode;
 };
 
-export function PageHero({ eyebrow, title, hindi, intro, children }: Props) {
+export function PageHero({ eyebrow, title, path, hindi, intro, children }: Props) {
   return (
     <section className="sunburst text-cream">
+      <JsonLd data={breadcrumbLd(path, title)} />
       <div className="mx-auto max-w-7xl px-5 py-16 md:px-6 md:py-20">
         <nav className="text-xs text-cream/60" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-gold-light">

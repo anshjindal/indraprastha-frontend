@@ -1,19 +1,20 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHero, Section } from "@/components/PageHero";
 import { photos } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 import { festival, site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Photos",
-  description: `Photo gallery of the ${festival.name} and social welfare activities by ${site.name}.`,
-  alternates: { canonical: "/photos" },
-};
+export const metadata = pageMetadata({
+  title: "Ramleela Photos – Sagarpur, Delhi",
+  description: `Photos from the ${festival.name} in Delhi — the Ramlila stage, Ravan Dahan and the mela — and welfare drives by ${site.name}.`,
+  path: "/photos",
+});
 
 export default function PhotosPage() {
   return (
     <>
       <PageHero
+        path="/photos"
         eyebrow="Gallery"
         title="Photos"
         intro={`Moments from the ${festival.name}, our cultural events and welfare drives since ${site.founded}.`}

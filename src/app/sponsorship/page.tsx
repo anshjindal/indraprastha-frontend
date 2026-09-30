@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
 import { Card, PageHero, Section, SectionHeading } from "@/components/PageHero";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { ContactStrip } from "@/components/ContactStrip";
+import { pageMetadata } from "@/lib/seo";
 import { festival, site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Sponsorship",
-  description: `Sponsor the ${festival.name} ${festival.year} and reach ${festival.totalFootfall} visitors over ${festival.days} days in South West Delhi.`,
-  alternates: { canonical: "/sponsorship" },
-};
+export const metadata = pageMetadata({
+  title: `Ramleela Sponsorship in Delhi ${festival.year} – Reach 5 Lakh+ Visitors`,
+  description: `Sponsor the ${festival.seoName} ${festival.year} at ${festival.venue} — title, day and Ravan Dahan sponsorships reaching ${festival.totalFootfall} visitors over ${festival.days} days in South West Delhi (${site.name}).`,
+  path: "/sponsorship",
+});
 
 const reach = [
   { value: `~${festival.dailyFootfall}`, label: "visitors every day" },
@@ -30,6 +30,7 @@ export default function SponsorshipPage() {
   return (
     <>
       <PageHero
+        path="/sponsorship"
         eyebrow={`${festival.name} ${festival.year}`}
         title="Sponsorship"
         intro="Put your brand at the heart of South West Delhi's biggest religious and cultural festival — and support a cause that serves the community all year round."

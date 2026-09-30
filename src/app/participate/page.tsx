@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
 import { Card, PageHero, Section, SectionHeading } from "@/components/PageHero";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { ContactStrip } from "@/components/ContactStrip";
+import { pageMetadata } from "@/lib/seo";
 import { festival } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Participate",
-  description: `Perform in the Ramlila, bring your cultural troupe or set up a stall at the ${festival.name} ${festival.year}.`,
-  alternates: { canonical: "/participate" },
-};
+export const metadata = pageMetadata({
+  title: `Perform or Book a Stall – Sagarpur Ramleela ${festival.year}, Delhi`,
+  description: `Act in the Ramlila, bring your cultural troupe, or book a food, shopping or joy-ride stall at the ${festival.seoName} ${festival.year}, ${festival.venue}, ${festival.dateLabel}.`,
+  path: "/participate",
+});
 
 const ways = [
   { icon: "🏹", title: "Ramlila Artist", body: "Act, sing or play music in the Ramlila. Experienced artists and enthusiastic newcomers are both welcome." },
@@ -23,6 +23,7 @@ export default function ParticipatePage() {
   return (
     <>
       <PageHero
+        path="/participate"
         eyebrow="Be on the stage, or behind it"
         title="Participate"
         intro={`The ${festival.name} is built by the community. Here is how you can take part in ${festival.year}.`}

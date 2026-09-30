@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero, Section } from "@/components/PageHero";
+import { pageMetadata } from "@/lib/seo";
 import { festival, site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Quality Manual",
+export const metadata = pageMetadata({
+  title: "Quality Manual – NGO Quality Standard",
   description: `Quality manual of ${site.name}, based on the NGO Quality Standard (ICONG, version 5), describing how the ${festival.name} and welfare activities are planned, run, measured and improved.`,
-  alternates: { canonical: "/quality-manual" },
-};
+  path: "/quality-manual",
+});
 
 const referenceStandard = {
   title: "NGO Quality Standard, Version 5 (ICONG – Instituto para la Calidad de las ONG)",
@@ -100,6 +100,7 @@ export default function QualityManualPage() {
   return (
     <>
       <PageHero
+        path="/quality-manual"
         eyebrow="Governance"
         title="Quality Manual"
         intro={`How ${site.name} plans, delivers, measures and improves the ${festival.name} and its social welfare activities — based on the NGO Quality Standard and our Quality Policy.`}

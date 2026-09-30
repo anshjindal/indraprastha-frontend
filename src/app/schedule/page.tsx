@@ -1,20 +1,25 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHero, Section } from "@/components/PageHero";
+import { JsonLd } from "@/components/JsonLd";
 import { ScheduleTable } from "@/components/ScheduleTable";
 import { schedule2026 } from "@/lib/schedule";
+import { pageMetadata } from "@/lib/seo";
 import { festival, mapsDirectionsUrl } from "@/lib/site";
+import { eventLd } from "@/lib/structured-data";
 
-export const metadata: Metadata = {
-  title: `Schedule ${festival.year}`,
-  description: `Day-by-day programme of the ${festival.name} ${festival.year}, ${festival.dateLabel} at ${festival.venue}, New Delhi.`,
-  alternates: { canonical: "/schedule" },
-};
+export const metadata = pageMetadata({
+  title: `Ramleela Schedule ${festival.year} – Sagarpur, Delhi (${festival.dateLabel})`,
+  description: `Day-by-day Ramlila schedule of the ${festival.seoName} ${festival.year} at ${festival.venue}: Ram Janmotsav 12 Oct, Sita Haran 16 Oct, Lanka Dahan 18 Oct and Ravan Dahan on Dussehra, 20 Oct.`,
+  path: "/schedule",
+  keywords: ["Ramleela schedule 2026", "Ramlila time table Delhi", "Ravan Dahan date 2026", "रामलीला कार्यक्रम 2026"],
+});
 
 export default function SchedulePage() {
   return (
     <>
+      <JsonLd data={eventLd} />
       <PageHero
+        path="/schedule"
         eyebrow={`कार्यक्रम · ${festival.year}`}
         title={`Ramleela Schedule ${festival.year}`}
         hindi={`${festival.hindiName} ${festival.year}`}

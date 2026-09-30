@@ -1,19 +1,20 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { Card, PageHero, Section } from "@/components/PageHero";
 import { CtaBand } from "@/components/CtaBand";
+import { pageMetadata } from "@/lib/seo";
 import { festival, site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "About Us",
-  description: `About ${site.name} — a registered NGO founded in ${site.founded} that organises the ${festival.name} and social welfare activities in New Delhi.`,
-  alternates: { canonical: "/about" },
-};
+export const metadata = pageMetadata({
+  title: "About Us – Organisers of the Sagarpur Ramleela, Delhi",
+  description: `${site.name} is a registered NGO founded in ${site.founded} that organises the ${festival.seoName} at ${festival.venue} and runs blanket distribution and health drives in New Delhi.`,
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
+        path="/about"
         eyebrow={`Serving society since ${site.founded}`}
         title="About Us"
         hindi={site.hindiName}
@@ -27,6 +28,23 @@ export default function AboutPage() {
             noble vision to serve the society and promote its welfare. We are committed to making a positive impact on
             the lives of individuals and communities, striving to bring about positive change through various
             initiatives.
+          </p>
+
+          <div className="my-8 grid gap-4 sm:grid-cols-3">
+            {[
+              { label: "Registration No.", value: site.registrationNo },
+              { label: "NGO Darpan ID", value: site.darpanId },
+              { label: "Income Tax", value: site.taxRegistration },
+            ].map((item) => (
+              <div key={item.label} className="rounded-2xl border border-gold/30 bg-cream px-5 py-4">
+                <p className="text-xs font-bold tracking-[0.2em] text-saffron uppercase">{item.label}</p>
+                <p className="mt-1 font-bold break-all text-maroon">{item.value}</p>
+              </div>
+            ))}
+          </div>
+          <p>
+            We are registered under Sections 12A and 80G of the Income Tax Act, and listed on NITI Aayog&apos;s NGO
+            Darpan portal. Donations to {site.name} are eligible for tax deduction under Section 80G.
           </p>
 
           <h2>Ramleela &amp; Dusshera Mohotsav Sagarpur</h2>

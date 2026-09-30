@@ -1,18 +1,19 @@
-import type { Metadata } from "next";
 import { PageHero, Section } from "@/components/PageHero";
 import { EnquiryForm } from "@/components/EnquiryForm";
+import { pageMetadata } from "@/lib/seo";
 import { festival, mapsDirectionsUrl, mapsEmbedUrl, site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Contact Us",
-  description: `Contact ${site.name} — registered office in West Sagarpur and correspondence office in Palam Colony, New Delhi.`,
-  alternates: { canonical: "/contact" },
-};
+export const metadata = pageMetadata({
+  title: "Contact Us – Ramleela Organisers in Sagarpur, New Delhi",
+  description: `Contact ${site.name}, organisers of the Sagarpur Ramleela: offices in West Sagarpur and Palam Colony, New Delhi. Call ${site.phones[0].display} or email ${site.email}.`,
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (
     <>
       <PageHero
+        path="/contact"
         eyebrow="We'd love to hear from you"
         title="Contact Us"
         intro="Reach out for festival enquiries, volunteering, sponsorship, donations or anything else."

@@ -72,7 +72,7 @@ export function Footer() {
             </address>
           ))}
           <div className="mt-4 space-y-1 text-sm">
-            {site.phones.map((phone) => (
+            {site.phones.filter((phone) => phone.id !== "nand").map((phone) => (
               <p key={phone.id}>
                 <a href={phone.href} className="hover:text-gold-light">
                   {phone.name}: {phone.display}

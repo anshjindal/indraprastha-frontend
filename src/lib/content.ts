@@ -43,6 +43,15 @@ export const achievements: Achievement[] = [
     image: { src: "/images/achievements/vidyanjali-2025.jpg", width: 1743, height: 1121 },
     document: "/documents/vidyanjali-certificate-2025.pdf",
   },
+  {
+    title: "Vishisht Ramleela – NBT Dussehra Darpan 2024",
+    issuer: "Navbharat Times (NBT)",
+    date: "October 2024",
+    dateIso: "2024-10",
+    summary:
+      "Selected by Navbharat Times as one of Delhi's Vishisht (distinguished) Ramleelas in its Dussehra Darpan 2024 contest. The certificate is signed by Ashish Pandey, Editor, Navbharat Times.",
+    image: { src: "/images/achievements/nbt-dussehra-darpan-2024.jpg", width: 717, height: 1024 },
+  },
 ];
 
 export type MediaLink = {

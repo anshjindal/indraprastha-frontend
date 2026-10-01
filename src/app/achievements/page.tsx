@@ -7,7 +7,8 @@ import { site } from "@/lib/site";
 
 export const metadata = pageMetadata({
   title: "Achievements & Recognition",
-  description: `Certificates and recognition received by ${site.name}, including the Ministry of Education's Vidyanjali certificate for supporting a government school in Sagarpur, New Delhi.`,
+  description: `Certificates and recognition received by ${site.name}, including Navbharat Times' Vishisht Ramleela 2024 award and the Ministry of Education's Vidyanjali certificate.`,
+  keywords: ["Vishisht Ramleela", "NBT Dussehra Darpan", "best Ramleela Delhi"],
   path: "/achievements",
 });
 
@@ -31,7 +32,9 @@ export default function AchievementsPage() {
               href={item.document ?? item.image.src}
               target="_blank"
               rel="noopener"
-              className="block overflow-hidden rounded-2xl border border-gold/20"
+              className={`block overflow-hidden rounded-2xl border border-gold/20 ${
+                item.image.height > item.image.width ? "mx-auto w-full max-w-sm" : ""
+              }`}
             >
               <Image
                 src={item.image.src}

@@ -72,8 +72,9 @@ export default function AboutPage() {
             underprivileged and create an inclusive and compassionate society.
           </p>
           <p>
-            In November 2025 we were recognised by the Ministry of Education for volunteering in its Vidyanjali school
-            programme, contributing stationery to Govt. Sarvodaya Kanya Vidyalaya No. 1, Sagarpur.{" "}
+            In 2024 Navbharat Times selected our Ramleela as one of Delhi&apos;s Vishisht (distinguished) Ramleelas in its
+            Dussehra Darpan contest. In November 2025 we were recognised by the Ministry of Education for volunteering in
+            its Vidyanjali school programme, contributing stationery to Govt. Sarvodaya Kanya Vidyalaya No. 1, Sagarpur.{" "}
             <Link href="/achievements" className="font-semibold text-saffron hover:text-maroon">
               See our achievements →
             </Link>
